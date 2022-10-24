@@ -6,21 +6,21 @@ st = time.time()
 #############################################
 
 def main():
+    path =  str(input("Enter path: ").strip())
     fileName = str(input("Enter any file name: ").strip())
-    rootDir = searchFile(fileName)
+    rootDir = searchFile(fileName, path)
     try:
-        os.startfile(rootDir)  #--open directory which has the file with asked name
+        os.startfile(rootDir)
     except TypeError:
         print("Dir not found")
 
-def searchFile(file):
-    path =r'path of main directory'  #<===== change this 
+def searchFile(file, path):
     for root, dirs, files in os.walk(path):
-        for name in files:  #--look for asked name in files
+        for name in files:
             if name.find(file) >= 0:
                 print(root)
                 return root
-        for directory in dirs:   #--look for asked name in directory name
+        for directory in dirs:
             if directory.find(file) >= 0:
                 print(root)
                 return root
