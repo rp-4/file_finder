@@ -25,7 +25,8 @@ def searchFile(file, path):
                 print(root)
                 return root
 
-main()
+if __name__ == "__main__":
+    main()
 
 #############################
 
